@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban", "Kanban\Kanban.csproj", "{143B9D10-F54D-48D3-85EB-CB0EA74C67FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.SharedUI", "KanbanSharedUI\Kanban.SharedUI.csproj", "{15CFB5B9-EEBF-4FBC-B16B-1CB1AB6F794C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Web", "Kanban.Web\Kanban.Web.csproj", "{4A0F565A-1860-40C2-9536-C944FCE6B9FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.App", "Kanban.App\Kanban.App.csproj", "{BBB48CB5-2A49-4164-A614-41B5069EA702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{143B9D10-F54D-48D3-85EB-CB0EA74C67FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{143B9D10-F54D-48D3-85EB-CB0EA74C67FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{143B9D10-F54D-48D3-85EB-CB0EA74C67FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{143B9D10-F54D-48D3-85EB-CB0EA74C67FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CFB5B9-EEBF-4FBC-B16B-1CB1AB6F794C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CFB5B9-EEBF-4FBC-B16B-1CB1AB6F794C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CFB5B9-EEBF-4FBC-B16B-1CB1AB6F794C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CFB5B9-EEBF-4FBC-B16B-1CB1AB6F794C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A0F565A-1860-40C2-9536-C944FCE6B9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0F565A-1860-40C2-9536-C944FCE6B9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0F565A-1860-40C2-9536-C944FCE6B9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0F565A-1860-40C2-9536-C944FCE6B9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB48CB5-2A49-4164-A614-41B5069EA702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB48CB5-2A49-4164-A614-41B5069EA702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB48CB5-2A49-4164-A614-41B5069EA702}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BBB48CB5-2A49-4164-A614-41B5069EA702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB48CB5-2A49-4164-A614-41B5069EA702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB48CB5-2A49-4164-A614-41B5069EA702}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
