@@ -1,0 +1,32 @@
+﻿<MudCard Style="@($"background:{Colors.Grey.Darken3};")">
+    <MudCardHeader>
+        <CardHeaderContent>
+            @if (Card.IsEditable)
+            {
+                <MudTextField @bind-Value="Card.Title" />
+            }
+            else
+            {
+                <MudText Typo="Typo.h6">@Card.Title</MudText>
+            }
+        </CardHeaderContent>
+        <CardHeaderActions>
+            <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+        </CardHeaderActions>
+    </MudCardHeader>
+    <MudCardContent>
+        @if (Card.IsEditable)
+        {
+            <MudTextField @bind-Value="Card.Description" />
+        }
+        else
+        {
+            <MudText Typo="Typo.h6">@Card.Description</MudText>
+        }
+    </MudCardContent>
+</MudCard>
+
+@code {
+    [Parameter]
+    public KanbanSharedUI.Models.CardModel Card { get; set; }
+}

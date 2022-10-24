@@ -1,9 +1,66 @@
 ﻿@page "/"
+<MudButton Variant="Variant.Filled" @onclick="AddColumn">Add Column</MudButton>
+<MudStack Row="true" Class="align-center justify-center">
+    <MudDropContainer T="KanbanSharedUI.Models.CardModel" Items="data.Cards" ItemsSelector="@((item,column) => item.ColumnID == column)">
+        <ChildContent>
+            @foreach (var item in data.Columns)
+            {
+                <Kanban.SharedUI.Components.ColumnComponent Column=@item RemoveColumnMethod="@RemoveColumn" />
+            }
+        </ChildContent>
+        <ItemRenderer>
+            <MudPaper Elevation="25" Class="pa-4 my-4">@context.Title</MudPaper>
+        </ItemRenderer>
+    </MudDropContainer>
+</MudStack>
 
-<PageTitle>Index</PageTitle>
+@code {
+    private KanbanSharedUI.Models.KanbanModel data = new();
 
-<h1>Hello, world!</h1>
+    protected override async Task OnInitializedAsync()
+    {
+        AddColumn();
+        AddColumn();
 
-Welcome to your new app.
+        AddCard();
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+        AddCard();
+        AddCard();
+    }
+
+    public void AddColumn()
+    {
+        data.AddColumn(data?.Columns?.Count ?? 0);
+        StateHasChanged();
+    }
+
+
+    public void AddCard()
+    {
+        data.AddCard();
+        StateHasChanged();
+    }
+
+    public void RemoveColumn(KanbanSharedUI.Models.ColumnModel column)
+    {
+        data.Columns.Remove(column);
+        StateHasChanged();
+    }
+
+    public void RemoveCard(int cardID)
+    {
+        data.Cards.RemoveAt(cardID);
+        StateHasChanged();
+    }
+
+    public void MoveColumn()
+    {
+        StateHasChanged();
+    }
+
+    public void MoveCard()
+    {
+        StateHasChanged();
+    }
+
+}

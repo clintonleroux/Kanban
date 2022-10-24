@@ -1,0 +1,47 @@
+﻿<MudStack>
+    <MudPaper Class="pa-4" Style="@($"background:{Colors.Grey.Darken4};")">
+        <MudStack>
+            <MudStack Class="align-center justify-center" Spacing="0">
+                <MudText Typo="Typo.h3">@column.Title</MudText>
+            </MudStack>
+            <MudMenu Icon="@Icons.Material.Filled.Settings">
+                <MudMenuItem>Add Card</MudMenuItem>
+                <MudMenuItem>Rename</MudMenuItem>
+                <MudMenuItem @onclick="InvokeRemoveColumnMethod">Delete</MudMenuItem>
+            </MudMenu>
+        </MudStack>
+    </MudPaper>
+
+    <MudPaper Class="pa-4" Style="@($"background:{Colors.Grey.Darken4};")">
+        <MudStack Spacing="4">
+            <!--DropZone Here-->
+        </MudStack>
+    </MudPaper>
+</MudStack>
+
+<MudDropZone T="KanbanSharedUI.Models.CardModel" CardModelIdentifier="column.ID"
+    Class="rounded mud-background-gray pa-6 ma-8 flex-grow-1">test
+</MudDropZone>
+
+@code {
+    //Drop zones
+    //https://mudblazor.com/components/dropzone#transfer-items-between-drop-zones
+    //https://try.mudblazor.com/snippet/xVPNb9owFL_zT-zNpyCRVEVdNYkkqkR3YFq3aWOXXpDBj9RaYkeOU6Ao__ts56MJZWq1yziY5Of3fh_O82p1R7kIFH2S6l14V7JbJfO5FNqgqGAZEQssNGYE7FpEZMXtf_P6E1PcaKkicuN5dmPCTP2TFDiGKAaLBAuGQvMtN3xRBN1-zWDpc2QRsS-_ckY1MgLzlBZGivnbFPdgF3-naF4_JUru_EsSj8D8wvkDT5l1bERqyMFNlHujdJKic1Oj4EouO00lS8GQQVYyf003vxMHGFF6gJz615BR_-MZI33lJe41LA-5jIhdg4frjj5b-1ck7gmHF01Dj8Zhrf1_DzX9X6GmZ0KdyRRevPx4oQ30A41bhWoY_TvNzQh9SvGRai5FRKYfOgcmxBVkB2vjZmP59jr4SjN0qq6xlRzyd666mY9HI8PAEI6uIVfcyCE8Ss6gN6Oe6WvndyG2Mmw_Ruwm3D6NHcGxy9DiweL0Vjxv3Ta343l35vortw4cfeGF7qnW19JwCdx5p9IGg7bUGx_BHo0pNbNCE8jwPZnAwM_wZlSTV4m-qVdopm-i-VwWGszJvslPNesdSrlO-QY2dho65pNDaGoKrbhIaskjJKhnwAU3a_WXyp6Tpr7ArrwaVX8A
+    //https://try.mudblazor.com/snippet/pVhbU-M2FH4mf6KnemmyQ8yl9CmXCYSly3SzMIRdZrqzwyixkmiwJVeW2QDDf--RLF_jZJf2AQdL536-c0nu7yeUC0_RZ6l-GSUxF0uY8LmSsVxo7zSOPjE9lop5YxlGUjCh45Yjmz7FmoXFxUT6LPDOqaanQkhNNZcibrX6k8Q_VzIaS6FRFVNwOyB_UTGj4pbGD5cog8BIscWA3PtlOgLmLh6Q0b1Gwti9T1nA5loqPG-3OZ7sz2WQhKIDgyGYd2-KupMYBgNwNymnMSJi_oAYtZ8jn2rmExgHNEYdfncRsDWYR1fJ72TY2uuPVzzwjTnoHL7vjRYYCDpfQfuRKqsKuID7GM0xrnaQ5AX_9ozH1zRCT98H7NHGYUAOCdxxX68G5Pj4JFoTjLL4wPhypQfk5PDQnDhTIto9gdA8ykalrkCY-N0ZnT8slUyE310q-gT2X-Z3g6Ux2xlwK2Vwhmae85jOAvZnojVTKF2rhDmylI6tNdw-RRLjgk8vTmaa64AdkWF_NhzZgH6iIesfzIb9A8dQ4p9GdI6eHpSOJkwkcDk3Xo_MR-xNMNaK08C7SU31JhjJD1LxZwKnYr6S6krxJUeG9NM7k1rL8MaEh8CtoiLG2Ic1olsZOYqPPNZF9I4bAkfgWkbykSlHZuLIsux0j__IQmIdOMNgSQFT_swGxDy9aUiDADMkAwM8--G9V0oiSBFtSle8vUp0gAD2vXPUoBmBKzEO-PzBIBbaFqfpzTRFjkVxp0OG6Sm4Yxvt1JS3G3fOFjQJdJN5WQ7e-1yT4Q0TmN3tOu2JyaiD1kGBrQJsprT-xibQVNqXPpYPX3BmKjaHU452k4iVrYPuIjFuOCSN-ALaKTn7bqRdRUx07NVLAbWNMsNMQhkJG7VRoP6Cs8CH0YxjHX2hQYLhLOtLrbwOEN4rGfjGfLwBc0WyqvqMstVHzLWrK5hQZRGafmIWRFxydY0GhborjklRStaKhvyWMJNC5tT3je4MLD8CwLXiIVVPBC4wqq7zpLWPgqwXW3JtQ5oevNonC2JWj_s2I-sJgwH8upHEJlBe8CBATKJtmxZn8StyCdFT93iHJ9bwqjfmqEBMqdWSXV3airNQvKe-74okR-JLaysON9p9ubn_176-1zc1e4GdEOywxegJ9t1ZZU9Mr0Esc3-azEKOoyV7TWnS06ISasPaklKcrXk731UsNdWurC_cZLZwaCLpNBSVI9paVz8ul_QDJxiyFP97zuH_Vyw7emOWj1JzLOrHojCrngIr9doxcEI1n_JYEfhCcVoKTJ_7Jx8pPyqdZq-21M-bvLX1U_avf1Dbj_qm3-M4wdSlAfiJBn1SAjmET93fyXA0NxLX2m0dFY1VDfaysloOWy1k9xlgtCPFUSeDOk2_OqCGUN06e62CdYZzDmqF32vtHbyDFRV-YJbgmaTKB_ZoFmN4d1DwPkqeNie3abbRjmwLvRQLuWEGx0PsKgYn5l_vsrzK2lvP8D7jmC1GKlrz2rIWTZlOIsAtyZlUMcbsR0bhGRXOlXhYLK4oHgu1ne-v-AJV4ja5lXAuyT4sKOJ5H1Go0HvvfRjpp87-NqZLAddKzlkcv5XzHL3cwfNqs5TMsIBgbsBUE5CG0RHElhsMnOAFlkz3MJocn68Fjc10eW45wphV6TJZxYpQoyxIay45TrNs7afqRKFuPxMsCsF5OqyWgeXs2ffKeC1JKd9mTMVbLx2Cr5uBK8HwzYFzNA6nO2JRUlKNhXuJrYStTueFkNLlzmxivFrb9pvjFoCXTSJ3CvcUSNA_0CzWCD6H-QpIKyxTiTb6cp6gUcli8TMsdzR4MN7qleFc1lgsrFPcYBrtnK9N0NQTqNC0O1uqwd2nOf16w_5JuGL-N_OSVtRHJpZ61T463Af7ZWaClUqXJu7Exj-w9zCn4jcNMwYhfmtD06mAo0OPdL7thEpWOuUc2abYtJK0zSAdp40f3ABwzTBvU2bCtRuaRdOS0dw6OgY2TeQWVwWhIau1faSwEntNDtUHeDszfUOGGbNNIrLlvuoaONczcRbM5TBUiiqlLX992Yf80DQU634DWYP3NapaBPaqI9O7YQvF4pUB4qZr1a-6Ox20e3ae7jFuBtr8inOUF66LwDhgVFltZXiUTk2DcouX5eMoCEN2iZvDGv0oeOzJ1SILXge6cGTFGlNyjj4clvb9kqDDXroaVQ25YaF8ZLnMnr02Pxllzci5cbfCPaa9NovyuvSjVSVnVkHj705WRsmsyk9fhYtfM3O_edkUsOGxlfn6Lw
+
+
+    [Parameter]
+    public KanbanSharedUI.Models.ColumnModel column { get; set; }
+
+    [Parameter] public Action<KanbanSharedUI.Models.ColumnModel> RemoveColumnMethod { get; set; }
+
+    private void InvokeRemoveColumnMethod()
+    {
+        RemoveColumnMethod.Invoke(column);
+    }
+
+    private void ItemUpdated(MudItemDropInfo<KanbanSharedUI.Models.CardModel> dropItem)
+    {
+        //dropItem.Item.Identifier = dropItem.DropzoneIdentifier;
+    }
+}

@@ -1,23 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-
   <ItemGroup>
-    <SupportedPlatform Include="browser" />
+    <SupportedPlatform Include="browser"/>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.9" />
-    <PackageReference Include="MudBlazor" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.9"/>
+    <PackageReference Include="MudBlazor" Version="6.0.17"/>
   </ItemGroup>
-
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\"/>
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\..\Github\MudBlazor\src\MudBlazor\MudBlazor.csproj"/>
+  </ItemGroup>
 </Project>
